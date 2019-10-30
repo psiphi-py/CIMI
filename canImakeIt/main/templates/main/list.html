@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    View List
+{% endblock %}
+
+{% block content %}
+    <h1>{{ls.name}}</h1>
+    <form method='post' action="#" autocomplete="off">
+        {% csrf_token %}
+
+        {% for item in ls.ingredient_set.all %}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        {% if item.complete == True %}
+                            <input type="checkbox" value="clicked" name="c{{item.id}}" checked>
+                        {% else %}
+                            <input type="checkbox" value="clicked" name="c{{item.id}}">
+                        {% endif %}
+                    </div>
+                </div>
+                <input type="text" value="{{item.text}}" class="form-control">
+            </div>
+        {% endfor %}
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button type="submit" value="newItem" name="newItem" class="btn btn-success">Add Ingredient</button>
+                &ensp;
+            </div>
+            <input type="text" name="new" placeholder="Add a single Ingredient">
+        </div>
+
+        <button type="submit" value="save" name="save" class="btn btn-danger">Remove Selected</button>
+    </form>
+
+    <br>
+
+    <div class="input-group">
+        <form action="/allrecipes/">
+            <button type="submit" class="btn btn-primary">Try allrecipes.com's recipes</button> &ensp;
+        </form>
+
+        <form action="/foodnetwork/">
+            <button type="submit" class="btn btn-primary">Try foodnetwork.com's recipes</button> &ensp;
+        </form>
+
+        <form action="/food_com/">
+            <button type="submit" class="btn btn-primary">Try food.com's recipes</button>
+        </form>
+    </div>
+{% endblock %}

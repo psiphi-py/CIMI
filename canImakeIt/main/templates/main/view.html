@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    View
+{% endblock %}
+
+{% block content %}
+
+    <div class="input-group">
+        {% if user.kitchen.all %}
+            {% for k in user.kitchen.all %}
+                <p><h2>{{k.name}} &nbsp; </h2></p>
+                <form action="/{{k.id}}">
+                    <button type="submit" class="btn btn-success">Add Ingredients</button> &nbsp;
+                </form>
+                <form action="/delete/">
+                    <button type="submit" class="btn btn-danger">Delete Kitchen</button>
+                </form>
+            {% endfor %}
+        {% else %}
+            <p>No existing Kitchen. Create a new Kitchen <a href="/create/">Here</a></p>
+        {% endif %}
+    </div>
+
+{% endblock %}

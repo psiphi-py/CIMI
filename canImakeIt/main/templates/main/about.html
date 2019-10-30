@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block unauthentic %}{% endblock %}
+
+{% block about %}
+   <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">About</h1>
+        <p class="lead text-muted">CIMI: Can I Make It?</p>
+        <p class="lead text-muted">Your Personal Recipe Search Engine</p>
+        <p>
+          <a href="/contact" class="btn btn-success my-2">Contact</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">1.Starting</h2>
+          <p class="lead">Registration & Login</p>
+        </div>
+        <div class="box-shadow" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+            <ul>
+                <li>
+                  <p class="text-left">If you are new to CIMI and would like to sign up, select
+                  <a href="/register">here</a>.</p>
+                </li>
+                <li>
+                  <p class="text-left">If you have created an account already, select
+                  <a href="/login">here</a>.</p>
+                </li>
+                <li>
+                  <p class="text-left">After signing in, you will be navigated to the Homepage</p>
+                </li>
+            </ul>
+        </div>
+      </div>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">2.Finding Recipes</h2>
+          <p class="lead">Kitchens & Ingredients</p>
+        </div>
+        <div class="box-shadow" style="width: 80%; border-radius: 15px 15px 0 0;"></div>
+        <ul>
+                <li>
+                  <p class="text-left">After you have logged in, select the 'Create Kitchen' button on the
+                  navigation bar on the left</p>
+                </li>
+                <li>
+                  <p class="text-left">Choose a name for your Kitchen and select 'Create New Kitchen'.</p>
+                </li>
+                <li>
+                  <p class="text-left">You will now be navigated to your 'Manage Kitchen' page. Here you may enter
+                  ONE INGREDIENT AT A TIME in the prompt box and then select 'Add Ingredient'. The Ingredient will pop
+                  up, and you may repeat the process with more ingredients. If you want to remove an Ingredient, select
+                  the tick box next to it's name and hit the 'Remove Selected' button</p>
+                </li>
+                <li>
+                  <p class="text-left">After all your Ingredients are entered, select a Recipe Site to search for
+                  Ingredients. This will take you to a new page where recipes found will appear. Click on any one of them
+                  and you will be navigated to the corresponding website where the recipe is located</p>
+                </li>
+            </ul>
+      </div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          Devon du Toit, 2019
+        </p>
+      </div>
+    </footer>
+
+{% endblock%}

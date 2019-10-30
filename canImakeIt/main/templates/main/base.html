@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+
+
+
+
+    {% block title %}
+        CIMI
+    {% endblock %}
+
+</head>
+<body>
+    <div class="sidenav">
+        <a href="/">Homepage</a>
+
+        {% if user.is_authenticated %}
+            <a href="/create">Create Kitchen</a>
+        {% else %}
+            <a href="/">Create Kitchen</a>
+        {% endif %}
+        <a href="/view">Manage Kitchen</a>
+
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+
+        {% if user.is_authenticated %}
+            <a href="/logout">Sign out</a>
+        {% else %}
+            <a href="/login">Sign in</a>
+        {% endif %}
+
+    </div>
+    <div id="content" class="main">
+
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 id="alink"><a class="text-dark" href="/" >CIMI</a></h1>
+                <hr class="mt-0 mb-4">
+                {% if user.is_authenticated %}
+                    {% block content %}
+                    {% endblock %}
+                {% else %}
+                    {% block unauthentic %}
+                        <main role="main">
+
+                          <section class="jumbotron text-center">
+                            <div class="container">
+                              <h1 class="jumbotron-heading">Welcome to CIMI</h1>
+                              <p class="lead text-muted">Your Personal Recipe Search Engine. <br> Hit the 'Login/Sign Up'
+                              button to create a new account or Sign In. Alternatively,
+                              if you want to know more about CIMI, hit the 'About' button.</p>
+                              <p>
+                                <a href="/login" class="btn btn-primary my-2">Login/Sign Up</a>
+                                <a href="/about" class="btn btn-success my-2">About</a>
+                              </p>
+                            </div>
+                          </section>
+
+                          <div class="album py-5 bg-light">
+                            <div class="container">
+
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{% static 'main/images/img3.jpg' %}" alt="Card image cap">
+                                    <div class="card-body">
+                                      <p class="card-text">CIMI helps you find recipes for your left-over ingredients.</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top"src="{% static 'main/images/img4.jpg' %}" alt="Card image cap">
+                                    <div class="card-body">
+                                      <p class="card-text">Sign Up and discover recipes ranging from beginner level to
+                                      master chef quality.</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{% static 'main/images/img5.jpg' %}" alt="Card image cap">
+                                    <div class="card-body">
+                                      <p class="card-text">CIMI uses the largest recipe websites to find recipes
+                                      based on the ingredients in your kitchen.</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </main>
+
+                        <footer class="text-muted">
+                          <div class="container">
+                            <p class="float-right">
+                              Devon du Toit, 2019
+                            </p>
+
+                          </div>
+                        </footer>
+                    {% endblock %}
+                {% endif %}
+                {% block contact %}{% endblock%}
+                {% block login %}{% endblock%}
+                {% block about %}{% endblock %}
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="
+    sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="
+    sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="
+    sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
