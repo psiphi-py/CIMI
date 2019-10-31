@@ -1,4 +1,3 @@
-# Welcome to the sh!t show
 # function-based views are used as debugging resources are more plentiful
 # web-scrapping done using beautifulsoup4 and requests
 
