@@ -1,3 +1,4 @@
+<!-- Page for adding Ingredients to user's Kitchen -->
 {% extends 'main/base.html' %}
 
 {% block title %}
@@ -5,10 +6,13 @@
 {% endblock %}
 
 {% block content %}
+<!-- ls received from user's added data -->
     <h1>{{ls.name}}</h1>
     <form method='post' action="#" autocomplete="off">
         {% csrf_token %}
 
+<!-- algorithm for adding ingredients and selecting the checkbox to allow ingredient deletion -->
+<!-- 1.first defining the checkboxes -->
         {% for item in ls.ingredient_set.all %}
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -23,7 +27,7 @@
                 <input type="text" value="{{item.text}}" class="form-control">
             </div>
         {% endfor %}
-
+<!-- 2.Prompt user to add more ingredients -->
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <button type="submit" value="newItem" name="newItem" class="btn btn-success">Add Ingredient</button>
@@ -36,7 +40,8 @@
     </form>
 
     <br>
-
+<!-- buttons to prompt the user to scrape google search results for ingredients from selected recipe sites -->
+<!-- initialising web-scrappers in main/views -->
     <div class="input-group">
         <form action="/allrecipes/">
             <button type="submit" class="btn btn-primary">Try allrecipes.com's recipes</button> &ensp;

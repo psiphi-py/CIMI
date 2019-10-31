@@ -1,3 +1,4 @@
+<!-- Page displaying user's Kitchen creation-->
 {% extends 'main/base.html' %}
 
 {% block title %} Create New List {% endblock %}
@@ -5,7 +6,7 @@
 {% block content %}
 
     <h3>Create Kitchen</h3>
-
+<!-- post django form asking user what they wish to call their kitchen, connecting this to the user -->
     <form method="post" action="/create/" class="form-group" autocomplete="off">
         {% csrf_token %}
         <div class="input-group mb-3">

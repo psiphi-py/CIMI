@@ -1,9 +1,15 @@
+<!-- page displaying the usability of CIMI -->
+<!-- Bootstrap example combination of 'album' and 'product' (https://getbootstrap.com/docs/4.3/examples/), 'cause why
+reinvent the wheel?-->
 {% extends 'main/base.html' %}
 {% load static %}
 
+<!-- enable an unauthenticated user to see this page -->
 {% block unauthentic %}{% endblock %}
 
+<!-- Main Arguments for Page -->
 {% block about %}
+<!-- Main Banner -->
    <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">About</h1>
@@ -15,6 +21,9 @@
       </div>
     </section>
 
+<!-- Instructions of Usability -->
+<!-- Deviation of Bootstrap's product example by removing interior contrasting boxes -->
+<!-- Instruction Box 1 Registration and Login-->
     <div class="container">
       <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
@@ -37,6 +46,7 @@
             </ul>
         </div>
       </div>
+<!-- Instruction Box 2 Finding Recipes -->
       <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">2.Finding Recipes</h2>
@@ -66,6 +76,7 @@
       </div>
     </div>
 
+<!-- Footer Displaying site ownership -->
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">

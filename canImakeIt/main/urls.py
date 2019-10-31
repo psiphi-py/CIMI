@@ -1,7 +1,10 @@
 from django.urls import path
 from . import views
+# function based views as debugging resources more reachable
+# linking templates with views
 
 urlpatterns = [
+    # <int:id> = dynamic templates for user unique views via their created data id
     path('<int:id>', views.index, name='index'),
     path('', views.home, name='home'),
     path('create/', views.create, name='create'),

@@ -1,3 +1,4 @@
+<!-- page to display web results found from searching www.allrecipes.com -->
 {% extends 'main/base.html' %}
 
 {% block title %}
@@ -7,13 +8,14 @@
 {% block content %}
 
     <h2>Recipes from allrecipes.com</h2>
-
+<!-- receive web-scrapper result from google search as i=recipe name, j=recipe's partial hyperlink from
+www.allrecipes.com -->
     {% for i, j in rec_fv %}
         <a href="https://www.allrecipes.com/recipe/{{j}}" target="_blank">{{i}}</a><br>
     {% endfor %}
 
     <br>
-
+<!-- button prompting user to return to Kitchen -->
     <div class="input-group">
         {% for c in user.kitchen.all %}
             <form action="/{{c.id}}">

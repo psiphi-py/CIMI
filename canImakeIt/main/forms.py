@@ -1,3 +1,4 @@
+# django forms method needed to alter their database
 from django import forms
 
 class CreateNewList(forms.Form):

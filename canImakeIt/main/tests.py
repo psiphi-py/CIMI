@@ -1,3 +1,3 @@
 from django.test import TestCase
 
-# Create your tests here.
+# active continuous testing methods, tests n.a
