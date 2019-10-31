@@ -1,7 +1,7 @@
 /* main navigation bar from base.html */
 .sidenav {
     height: 100%;
-    width: 160px;
+    width: 13%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -13,9 +13,10 @@
 
 /* navigation bar hyperlinks */
 .sidenav a {
-    padding: 6px 8px 20px 16px;
+    padding: 1% 4% 20% 10%;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
+    font-size: 1.5vw;
     color: #818181;
     display: block;
 }

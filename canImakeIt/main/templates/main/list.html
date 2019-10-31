@@ -2,7 +2,7 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-    View List
+
 {% endblock %}
 
 {% block content %}
@@ -29,11 +29,12 @@
         {% endfor %}
 <!-- 2.Prompt user to add more ingredients -->
         <div class="input-group mb-3">
+            <input type="text" name="new" placeholder="Add an Ingredient">
             <div class="input-group-prepend">
-                <button type="submit" value="newItem" name="newItem" class="btn btn-success">Add Ingredient</button>
+                <button type="submit" value="newItem" name="newItem" class="btn btn-success">Add to Kitchen</button>
                 &ensp;
             </div>
-            <input type="text" name="new" placeholder="Add a single Ingredient">
+
         </div>
 
         <button type="submit" value="save" name="save" class="btn btn-danger">Remove Selected</button>
