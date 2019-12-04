@@ -40,4 +40,4 @@ For any inquiries contact me on dutoitdevon@gmail.com
 
 *Link*
 
-Can be viewd on http://cimi.pythonanywhere.com
+Can be viewed on http://cimi.pythonanywhere.com
